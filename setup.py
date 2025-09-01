@@ -19,7 +19,7 @@ setup(
         "Intended Audience :: Legal Industry",
         "Topic :: Education",
     ]
-    python_requires=">=3.12.4",
+    python_requires=">=3.13.0",
     install_requires=[
         "requests",
         "dependency_injector",
