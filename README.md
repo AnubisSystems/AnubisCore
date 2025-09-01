@@ -1,6 +1,10 @@
 # AnubisCore
 Core del sistema hexagonal para creación de aplicaciones de gestion
 
+Este proyecto se distribuye bajo una licencia dual:
+- Uso educativo/personal: ver `LICENSE.txt`
+- Uso comercial: requiere licencia de pago, ver `COMMERCIAL_LICENSE.txt`
+
 
 ## 📄 Licencia
 
