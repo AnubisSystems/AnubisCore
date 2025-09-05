@@ -45,3 +45,7 @@ class IAIAnalizeServicePort(ABC):
     @abstractmethod
     def process_to_text_json(self, image_base64: str) -> tuple[any,AIRecipeList]:
         pass
+
+    @abstractmethod
+    def process_to_text(self, image_base64: str) -> tuple[any,AIRecipeList]:
+        pass

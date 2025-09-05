@@ -57,6 +57,10 @@ class IAImageRecognitonClasify(IAIAnalizeServicePort):
     def process_to_text_json(self, image_base64: str) -> tuple[any,AIRecipeList]:
         return self.process_to_json(image_base64)
     
+    def process_to_text(self, image_base64):        
+        raise NotImplementedError("Esta función aún no está implementada.")
+
+    
 class IAImageRecogniton(IAIAnalizeServicePort):
     def __init__(self, 
                   ia_adapter: IAIServicesManagerPort,
