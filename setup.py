@@ -1,7 +1,7 @@
 from setuptools import setup, find_packages
 
 setup(
-    name="anubis_core",
+    name="AnubisCore",
     version="0.0.11",
     author="Jose Manuel Herera Saenz",
     author_email="incubadoradepollos@gmail.com",
