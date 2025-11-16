@@ -2,6 +2,7 @@
 from anubis_core.features.product.ports import IProductAdapter
 from anubis_core.features.product.models import CoreProduct
 from anubis_openai_adapters.openai import OpenAIAdapter
+from .exceptions import ProductApplicactionException, ProductsAplicacionExceptions
 
 
 class ProductsService():
@@ -18,7 +19,13 @@ class ProductsService():
         
 
     def get_product(self, id_product:int)-> CoreProduct:
-        return self.product_adapter.get_product(id_product)
+        _product = self.product_adapter.get_product(id_product)
+        if _product == None: 
+            raise ProductApplicactionException(
+                ProductsAplicacionExceptions.PRODUCT_NOT_FOUND, 
+                {"product" : id_product})
+        return _product
+    
     
     def search_id(self, page, rows,  *args, **kwargs) -> list[str]:        
         return self.product_adapter.search_id(page,rows,*args, **kwargs)        

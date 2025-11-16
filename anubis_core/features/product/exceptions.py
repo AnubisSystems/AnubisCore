@@ -1,4 +1,9 @@
-class ProductCreateException(Exception):
-    def __init__(self, error_code, message="Error en la aplicación"):
-        self.error_code = error_code
-        super().__init__(f"[Error {error_code}] {message}")
+from anubis_core.common.exceptions import EnumExceptionsTemplate, AnubisBaseAplicationException
+
+class ProductsAplicacionExceptions(EnumExceptionsTemplate):    
+    PRODUCT_NOT_FOUND = ("product_not_found", "El producto {product} no se ha encontrado en el sistema")
+    
+
+class ProductApplicactionException(AnubisBaseAplicationException):
+    def __init__(self, codigo_error, contexto=None, original=None):
+        super().__init__(ProductApplicactionException, codigo_error, contexto, original)
