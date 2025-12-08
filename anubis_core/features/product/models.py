@@ -2,6 +2,32 @@
 from pydantic import BaseModel
 from typing import List, Optional
 
+class CoreCategory(BaseModel):
+    
+    id : Optional[int] = None
+
+    ref: Optional[int] = None
+
+    nivel: Optional[int] = None
+
+    padre: Optional[int] = None
+
+    activo : Optional[bool] = None
+
+    numero_productos: Optional[int] = None
+
+    nombre: Optional[str] = None
+
+    sitio_web_id:  Optional[int] = None
+
+
+class CoreCategoryProduct(BaseModel):
+
+    idProduct: int 
+
+    idCategory: int
+
+
 """CORE PRODUCT MODEL
 """
 class CoreProduct(BaseModel):
@@ -51,9 +77,12 @@ class CoreProduct(BaseModel):
 
     """CLASIFICACION
     """
-    categories : Optional[list[str]] = []
+    categories : Optional[list[CoreCategory]] = []
     """CATEGORIAS
     """
     tags : Optional[list[str]] = []
     """TAGS DEL PRODUCTOS
     """
+
+
+

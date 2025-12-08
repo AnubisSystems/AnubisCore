@@ -1,5 +1,5 @@
 from abc import ABC, abstractmethod
-from anubis_core.features.product.models import CoreProduct
+from anubis_core.features.product.models import CoreProduct, CoreCategory
 
 """INTERFACES DE PRODUCTOS A IMPLEMENTAR POR LOS ADAPTADORES ESPECIFICOS
 """
@@ -58,3 +58,29 @@ class IProductAdapter(ABC):
     @abstractmethod
     def search_id(self, page, rows,  *args, **kwargs) -> list[str]:        
         pass
+
+
+class ICategoryAdapter(ABC):
+    """Interface de categoria de prodicty abstrancta"""
+
+    @abstractmethod
+    def get_category(self, id_category=None, depth=0) -> CoreCategory:
+        pass    
+
+    @abstractmethod
+    def create_category(self, category: CoreCategory) -> CoreCategory:
+        pass
+
+    @abstractmethod
+    def send_category(self, category: CoreCategory) -> CoreCategory:
+        pass
+
+    @abstractmethod
+    def disable_category(self, category: CoreCategory) -> bool:
+        pass
+
+    @abstractmethod
+    def disable_category(self, id) -> bool:
+        pass
+
+    
